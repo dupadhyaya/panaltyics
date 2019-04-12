@@ -1,0 +1,13 @@
+Data and related material for each chapter
+http://github.com/pydata/pydata-book
+Download data and code examples
+In  [1]: code
+Out [1]: output
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+np.arange belongs numpy 
+Don't import everything :  from numpy import *
+
+
