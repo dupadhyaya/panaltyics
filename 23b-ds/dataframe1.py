@@ -41,6 +41,9 @@ df.index     # “the index” (aka “the labels”)
 df.columns   # column names (which is “an index”)
 df.dtypes    # data types of each column
 df.shape     # number of rows and columns
+
+
+
 df.values    # underlying numpy array — df are stored as numpy arrays for effeciencies.
 # select a column
 df[‘column_y’]         # select one column

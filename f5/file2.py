@@ -11,7 +11,7 @@ print(dataset.shape)
 import urllib.request
 local_filename, headers = urllib.request.urlretrieve('http://python.org/')
 html = open(local_filename)
-
+html
 #workfile = 'dailymintemp.csv'
 #f = open('workfile', 'w')
 #f.readline()
