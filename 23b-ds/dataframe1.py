@@ -7,12 +7,10 @@ Wed May  9 20:25:47 2018: Dhiraj
 
 #Code snippets for Pandas
 import pandas as pd
-‘’’
-Reading Files, Selecting Columns, and Summarizing
-‘’’
+#Reading Files, Selecting Columns, and Summarizing
 # reading in a file from local computer or directly from a URL
 # various file formats that can be read in out wrote out
-‘’’
+'''
 Format Type     Data Description      Reader           Writer
 text                  CSV            read_csv          to_csv
 text                 JSON            read_json         to_json
@@ -27,7 +25,7 @@ binary                SAS             read_sas
 binary        Python Pickle Format   read_pickle       to_pickle
 SQL                   SQL             read_sql          to_sql
 SQL             Google Big Query      read_gbq          to_gbq
-‘’’
+'''
 #to read about different types of files, and further functionality of reading in files, visit: http://pandas.pydata.org/pandas-docs/version/0.20/io.html
 df = pd.read_csv(‘local_path/file.csv’)
 df = pd.read_csv(‘https://file_path/file.csv')
