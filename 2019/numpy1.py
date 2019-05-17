@@ -387,3 +387,33 @@ np.add.at(counts, i, 1)
 counts
 plt.plot(bins, counts, linestyle='steps')
 plt.hist(x, bins, histtype='step')
+
+
+#sorting----
+x = np.array([5,2, 6, 9,1])
+x
+np.sort(x)
+x.sort()  #sort inplace
+x
+x = np.array([5,2, 6, 9,1])
+x
+np.argsort(x)  #indices values
+#sorting along rows and columns
+
+rand = np.random.RandomState(42)
+x = rand.randint(0,10, (4,6))
+x  #matrix of 4 x 6 from 0 to 10
+np.sort(x)  #sort rowwise
+np.sort(x, axis=1)  #rowwise
+np.sort(x, axis=0)  #columnwise
+
+#partition into division
+x = np.array([7,2,3,1,6,5,4])
+np.partition(x, 3)
+np.partition(x, 4)
+
+rand = np.random.RandomState(42)
+X = rand.randint(0,10, (4,6))
+X
+np.partition(X, 3, axis=1)  #rowwise
+np.partition(X, 2, axis=0)  #colwise

@@ -7,3 +7,5 @@ Tue Apr 24 08:32:44 2018: Dhiraj
 #%% (standard cell separator)
 
 #https://pythonhosted.org/spyder/editor.html
+
+#%%
