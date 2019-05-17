@@ -19,6 +19,6 @@ os.chdir(path)
 os.getcwd()
 
 import pandas as pd
-flight_data = pd.read_csv(r"E:/pywork/pyProjects/panaltyics/data/nycflights13.csv")
+flight_data = pd.read_csv(r"E:/pywork/pydata/nycflights13.csv")
 
 flight_data.head()
