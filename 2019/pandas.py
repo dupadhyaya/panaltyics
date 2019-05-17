@@ -115,3 +115,57 @@ grp.mean()
 grp.describe() 
 grp.count().reset_index()  #level of headings
 
+#transform
+data2.groupby(['am',  'cyl']).transform(lambda x: x- x.mean())
+data3 =data2
+data3["ratio"] = ""
+data3=data3.assign(C="",D=np.nan)
+data3.columns
+data3.reindex(columns=list('ABCD'))
+data3[['mpg','ratio','C','D']]
+def nfunc(x):
+    x['D'] /= x['mpg']/x['wt']
+    return(x)
+
+data3.groupby(['am',  'cyl']).apply(nfunc)
+
+#%%
+#adding columns
+data3["ratio"] = ""
+data3=data3.assign(C="",D=np.nan)
+v\data3.reindex(columns=list('ABCD'))
+
+
+#%% specifying split key
+L=[4,6,8]
+data2.groupby('gear').sum()
+
+datagear = data2.set_index('gear')
+mapping={3:'G3', 4:'G4', 5:'G5'}
+datagear.groupby(mapping).sum()
+
+#%%
+#pivot table
+data2.head()
+data2.groupby('gear')['mpg'].mean()
+data2.groupby(['gear','am'])['mpg'].mean()
+data2.groupby(['gear','am'])['mpg'].aggregate('mean')
+data2.groupby(['gear','am'])['mpg'].aggregate('mean').unstack()
+
+data2.pivot_table('mpg', index='am', columns='gear')
+
+#multilevel
+mileage = pd.cut(data2['mpg'], [0,15,20,25,30,35])
+mileage
+data2.pivot_table('vs',mileage)
+data2.pivot_table('hp',['gear',mileage], aggfunc='sum')
+data2.pivot_table(values='hp', columns='am',index=['gear',mileage], aggfunc=np.mean)
+#index='leftColn', columns='topCol', values='ValueCol', aggfunc==np.mean)/sum/first/last/np.std, aggfunc=', '.join, fill_value='-')
+#aggfunc={'Age': np.mean, 'Random': [np.mean, np.std]})]
+data2.pivot_table(columns='cyl',index='gear', values='am', aggfunc='count', margins=True)
+#plot
+data2.pivot_table(columns='cyl',index='gear', values='am', aggfunc='count').plot()
+
+#eval
+data2.eval('newMPG = mpg * 3')
+#inplace=True will create new column
